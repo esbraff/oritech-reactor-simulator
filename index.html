@@ -376,7 +376,7 @@
             reactorSimulator.simulate(50000);
             const simulationResults = document.querySelector("#simulation-results");
 
-            const simulationSeconds = 50000 / 60;
+            const simulationSeconds = 50000 / 20;
 
             const simulationResultsText = `${reactorSimulator.rfGenerated / 50000} RF/t\n` +
                 `${(reactorSimulator.coolantConsumed / 1000 / simulationSeconds).toFixed(2)} ice blocks per second\n\n` +
@@ -386,9 +386,6 @@
                 `${(reactorSimulator.fuelConsumed / 4000 / simulationSeconds).toFixed(2)} small plutonium pellets per second\n`;
 
             simulationResults.textContent = simulationResultsText;
-            
-            
-            textContent = (reactorSimulator.rfGenerated / 50000).toString() + " RF/t";
 
             const heatHistoryCanvas = document.querySelector("#heat-history");
 

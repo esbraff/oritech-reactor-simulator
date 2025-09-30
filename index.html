@@ -119,7 +119,7 @@
                         }
                     }
 
-                    if (t % 1000 == 0) {
+                    if (t % 20 == 0) {
                         this.maxHeatHistory.push(tickMaxHeat);
                     }
                 }
@@ -373,12 +373,12 @@
 
         function runSimulationAndPostResults() {
             const reactorSimulator = new ReactorSimulator(reactorLayout);
-            reactorSimulator.simulate(50000);
+            reactorSimulator.simulate(1000);
             const simulationResults = document.querySelector("#simulation-results");
 
-            const simulationSeconds = 50000 / 20;
+            const simulationSeconds = 1000 / 20;
 
-            const simulationResultsText = `${reactorSimulator.rfGenerated / 50000} RF/t\n` +
+            const simulationResultsText = `${reactorSimulator.rfGenerated / 1000} RF/t\n` +
                 `${(reactorSimulator.coolantConsumed / 1000 / simulationSeconds).toFixed(2)} ice blocks per second\n\n` +
                 `${(reactorSimulator.fuelConsumed / 4000 / simulationSeconds).toFixed(2)} uranium pellets per second, OR\n` +
                 `${(reactorSimulator.fuelConsumed / 40000 / simulationSeconds).toFixed(2)} plutonium pellets per second, OR\n` +
